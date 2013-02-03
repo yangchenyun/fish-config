@@ -31,7 +31,8 @@ alias sbu="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
 
 # git related shortcut
 alias undopush="git push -f origin HEAD^:master"
-alias gd="git diff | vim"
+alias gd="git diff"
+alias gdc="git diff --cached"
 alias ga="git add"
 alias gca="git commit -a -m"
 alias gcm="git commit -m"
