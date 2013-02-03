@@ -1,3 +1,3 @@
 # need a way to auto load these
-. "./functions/aliases.fish"
-. "./functions/utils.fish"
+. "$HOME/.config/fish/functions/aliases.fish"
+. "$HOME/.config/fish/functions/utils.fish"
