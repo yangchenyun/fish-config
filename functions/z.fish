@@ -1,3 +1,4 @@
+# https://github.com/sjl/z-fish/
 # maintains a jump-list of the directories you actually use
 #
 # INSTALL:
