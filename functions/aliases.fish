@@ -1,8 +1,7 @@
-function ..; cd ..; end
-function ...; cd ../..; end
-function -; cd -; end
+alias ..="cd .."
+alias ...="cd ../.."
+alias -="cd -"
 
-# List all files colorized in long format, including dot files
 alias la="ls -Gla"
 
 # List only directories
@@ -10,6 +9,25 @@ alias lsd='ls -l | grep "^d"'
 
 alias ll='ls -ahlF'
 alias l='ls -CF'
+
+################################
+###  File ShortCut
+################################
+alias D="cd ~/Downloads"
+alias d="cd ~/Dropbox"
+alias p="cd ~/project"
+alias g="git"
+alias v="mvim -v"
+alias vim="mvim -v"
+alias s="sublime"
+alias e="emacsclient -t"
+alias ec="emacsclient -c"
+alias sbp="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/"
+alias sbu="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
+
+################################
+###  Program ShortCut
+################################
 
 # git related shortcut
 alias undopush="git push -f origin HEAD^:master"
@@ -31,25 +49,10 @@ alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gl="git lg"
 alias gpom="git pull origin master"
+# turn on coloring on grep
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
-################################
-###  File ShortCut
-################################
-alias D="cd ~/Downloads"
-alias d="cd ~/Dropbox"
-alias p="cd ~/project"
-alias g="git"
-alias v="mvim -v"
-alias vim="mvim -v"
-alias s="sublime"
-alias e="emacsclient -t"
-alias ec="emacsclient -c"
-alias sbp="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/"
-alias sbu="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
-
-################################
-###  Program ShortCut
-################################
 # Quick check running state of a process
 alias psef="ps -ef | grep "
 alias top="top -o cpu"
