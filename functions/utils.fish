@@ -15,6 +15,18 @@ function server --description "Start an HTTP server from a directory"
   and python -m SimpleHTTPServer 8080
 end 
 
+# function httpcompression
+  # curl -LIs -H 'User-Agent: Mozilla/5 Gecko' -H 'Accept-Encoding: gzip,deflate,compress,sdch' $argv | grep '^Content-Encoding:'
+  # and echo "$argv is encoded using ${encoding#* }" 
+  # or echo "$argv is not using any encoding"
+# end
+
+function digga --description "All the dig info"
+  dig +nocmd $argv[1] any +multiline +noall +answer
+end
+
+alias myip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
+
 ################################
 ###  Unix Related
 ################################
@@ -26,6 +38,24 @@ alias fs="stat -f \"%z bytes\""
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+function md
+  mkdir -p "$argv"; cd "$argv"
+end
+
+function randpw --description "generate a random password"
+  dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 | rev | cut -b 2- | rev
+end
+
+function cd --description "auto ls for each cd"
+  if [ -n $argv[1] ]
+    builtin cd $argv[1] 
+    and ls -AF
+  else
+    builtin cd ~ 
+    and ls -AF
+  end
+end
 
 ################################
 ###  Mac OS Related
