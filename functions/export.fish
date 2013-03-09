@@ -12,8 +12,10 @@ set -x PATH "/usr/local/sbin/" $PATH
 set -x PATH "$HOME/.rbenv/bin" $PATH
 set -x PATH "$HOME/.rbenv/shims" $PATH
 
+set -x PATH "/usr/local/share/npm/bin" $PATH
+
 # editor
-set -x EDITOR "mvim -v"
+set -x EDITOR "mvim"
 
 # global node modules
 set -x NODE_PATH "/usr/local/lib/node_modules"
