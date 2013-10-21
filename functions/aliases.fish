@@ -77,6 +77,9 @@ alias goagent='python ~/tools/goagent/proxy.py'
 # Start synergys server
 alias syn='synergys --config ~/.synergy.conf'
 
+alias kunload='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias kload='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
 # from http://news.ycombinator.com/item?id=4492682
 function tree1; tree --dirsfirst -ChFLQ 1 $argv; end
 function tree2; tree --dirsfirst -ChFLQ 2 $argv; end
