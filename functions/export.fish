@@ -14,6 +14,8 @@ set -x PATH "$HOME/.rbenv/shims" $PATH
 
 set -x PATH "/usr/local/share/npm/bin" $PATH
 
+set -x PATH "./bin" $PATH
+
 # editor
 set -x EDITOR "mvim"
 
