@@ -75,7 +75,7 @@ alias md='gollum --host localhost --port 4566 ~/Dropbox/md_wiki'
 alias goagent='python ~/tools/goagent/proxy.py'
 
 # Start synergys server
-alias syn='synergys --config ~/.synergy.conf'
+# alias syn='synergys --config ~/.synergy.conf'
 
 alias kunload='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 alias kload='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
