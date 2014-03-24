@@ -50,6 +50,11 @@ function fish_prompt --description 'Write out the prompt'
 
 	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ' ' "$__fish_prompt_cwd" (pwd) 
   echo -n -s (set_color brown) (__fish_git_prompt) (set_color normal)
+
+  if set -q VIRTUAL_ENV
+    echo -n -s (set_color red) " [" (basename "$VIRTUAL_ENV") "]" (set_color normal) " "
+  end
+
   echo -n -s "$__fish_prompt_normal" "$prompt_status" 
   echo
   echo "$delim" ''
