@@ -7,26 +7,42 @@ set -x PATH "$HOME/bin" $PATH
 # add homebrew to the beginning of PATH
 set -x PATH "/usr/local/bin" $PATH
 set -x PATH "/usr/local/sbin" $PATH
+set -x PATH "/usr/texbin" $PATH
 
+# ruby
 # setup rbenv (from https://gist.github.com/2937920)
 set -x PATH "$HOME/.rbenv/bin" $PATH
 set -x PATH "$HOME/.rbenv/shims" $PATH
+# to make Ruby faster http://tmm1.net/ruby21-rgengc/?utm_source=rubyweekly&utm_medium=email
+set -x  RUBY_GC_HEAP_INIT_SLOTS 600000
+set -x  RUBY_GC_HEAP_FREE_SLOTS 600000
+set -x  RUBY_GC_HEAP_GROWTH_FACTOR 1.25
+set -x  RUBY_GC_HEAP_GROWTH_MAX_SLOTS 300000
 
+# nodejs
 set -x PATH "/usr/local/share/npm/bin" $PATH
+set -x PATH "./node_modules/.bin" $PATH
+set -x NODE_PATH "/usr/local/lib/node_modules"
 
+# python
+set -x PATH "/usr/local/share/python" $PATH
+
+# go
+set -x GOPATH "$HOME/go"
+set -x PATH "$GOPATH/bin" $PATH
+
+# haskell
+set -x PATH "$HOME/.cabal/bin" $PATH
+
+# respect local bins
 set -x PATH "./bin" $PATH
 
 # editor
 set -x EDITOR "mvim"
 
-# global node modules
-set -x NODE_PATH "/usr/local/lib/node_modules"
-
-# haskel libraries path
-set -x PATH "$HOME/.cabal/bin" $PATH
-
 # android SDK
-set -x ANDROID_SDK_ROOT /usr/local/Cellar/android-sdk/r21
+set -x ANDROID_SDK_ROOT /usr/local/Cellar/android-sdk/22.3
+set -x ANDROID_HOME /usr/local/Cellar/android-sdk/22.3
 
 # LESS with colors
 # from http://blog.0x1fff.com/2009/11/linux-tip-color-enabled-pager-less.html
@@ -44,11 +60,3 @@ setenv -x LESS_TERMCAP_us (set_color -o green)
 
 # grep colors
 setenv -x GREP_OPTIONS "--color=auto"
-
-# to make Ruby faster
-# https://gist.github.com/2113359
-set -x RUBY_HEAP_MIN_SLOTS 1000000
-set -x RUBY_HEAP_SLOTS_INCREMENT 1000000
-set -x RUBY_HEAP_SLOTS_GROWTH_FACTOR 1
-set -x RUBY_GC_MALLOC_LIMIT 1000000000
-set -x RUBY_HEAP_FREE_MIN 500000
