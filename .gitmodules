@@ -1,0 +1,3 @@
+[submodule "plugins/virtualfish"]
+	path = plugins/virtualfish
+	url = git@github.com:adambrenecki/virtualfish.git
