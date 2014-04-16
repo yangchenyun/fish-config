@@ -80,6 +80,8 @@ alias goagent='python ~/tools/goagent/proxy.py'
 alias kunload='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 alias kload='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
+alias cnpm="npm --registry=http://registry.cnpmjs.org --cache=$HOME/.npm/.cache/cnpm"
+
 # from http://news.ycombinator.com/item?id=4492682
 function tree1; tree --dirsfirst -ChFLQ 1 $argv; end
 function tree2; tree --dirsfirst -ChFLQ 2 $argv; end
