@@ -24,9 +24,6 @@ set -x PATH "/usr/local/share/npm/bin" $PATH
 set -x PATH "./node_modules/.bin" $PATH
 set -x NODE_PATH "/usr/local/lib/node_modules"
 
-# python
-set -x PATH "/usr/local/share/python" $PATH
-
 # go
 set -x GOPATH "$HOME/go"
 set -x PATH "$GOPATH/bin" $PATH
