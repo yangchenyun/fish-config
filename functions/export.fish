@@ -2,12 +2,10 @@
 set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
-set -x PATH "$HOME/bin" $PATH
-
 # add homebrew to the beginning of PATH
 set -x PATH "/usr/local/bin" $PATH
 set -x PATH "/usr/local/sbin" $PATH
-set -x PATH "/usr/texbin" $PATH
+set -x PATH "$HOME/bin" $PATH
 
 # ruby
 # setup rbenv (from https://gist.github.com/2937920)
@@ -28,8 +26,9 @@ set -x PATH "./node_modules/.bin" $PATH
 set -x PATH "/usr/local/share/python" $PATH
 
 # go
-set -x GOPATH "$HOME/go"
+set -x GOPATH "$HOME/.go-lib"
 set -x PATH "$GOPATH/bin" $PATH
+set -x PATH "/usr/local/opt/go/libexec/bin" $PATH
 
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
