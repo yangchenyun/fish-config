@@ -1,3 +1,6 @@
+set fish_color_user ffd787
+set fish_color_host 0087d7
+
 function fish_prompt --description 'Write out the prompt'
 	
 	set -l last_status $status
