@@ -63,7 +63,7 @@ alias ps="command ps -SAcr -o 'uid,pid,ppid,time,rss,command'"
 alias jcc='java -jar ~/tools/closure_compiler/compiler.jar'
 
 # Shortcut to Google Chrome
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+# alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # start local wiki
 alias wiki='python /Volumes/Document/Dropbox/Moin_wiki/wikiserver.py'
