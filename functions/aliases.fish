@@ -55,9 +55,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Quick check running state of a process
-alias psef="ps -ef | grep "
+alias psef="ps -ef | peco "
 alias top="top -o cpu"
-alias ps="command ps -SAcr -o 'uid,pid,ppid,time,rss,command'"
 
 # Google Closure compiler shortcuts
 alias jcc='java -jar ~/tools/closure_compiler/compiler.jar'
