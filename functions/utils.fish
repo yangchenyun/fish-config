@@ -57,6 +57,18 @@ function cd --description "auto ls for each cd"
   end
 end
 
+function pkill --description "pkill a process interactively"
+  ps aux | peco | awk '{ print $2 }' | xargs kill
+end
+
+function ppkill --description "kill -9 a process interactively"
+  ps aux | peco | awk '{ print $2 }' | xargs kill -KILL
+end
+
+function pgrep --description "pgrep a process interactively"
+  ps aux | peco | awk '{ print $2 }'
+end
+
 ################################
 ###  For Python
 ################################

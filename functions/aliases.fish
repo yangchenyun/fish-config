@@ -55,9 +55,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Quick check running state of a process
-alias psef="ps -ef | grep "
+alias psef="ps -ef | peco "
 alias top="top -o cpu"
-alias ps="command ps -SAcr -o 'uid,pid,ppid,time,rss,command'"
 
 # Google Closure compiler shortcuts
 alias jcc='java -jar ~/tools/closure_compiler/compiler.jar'
@@ -79,6 +78,8 @@ alias goagent='python ~/tools/goagent/proxy.py'
 
 alias kunload='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 alias kload='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
+alias cnpm="npm --registry=http://registry.cnpmjs.org --cache=$HOME/.npm/.cache/cnpm"
 
 # from http://news.ycombinator.com/item?id=4492682
 function tree1; tree --dirsfirst -ChFLQ 1 $argv; end
