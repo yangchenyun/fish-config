@@ -58,6 +58,14 @@ function cd --description "auto ls for each cd"
 end
 
 ################################
+###  For Python
+################################
+
+function gpip
+  env PIP_REQUIRE_VIRTUALENV='' pip $argv
+end
+
+################################
 ###  Mac OS Related
 ################################
 # Flush Directory Service cache

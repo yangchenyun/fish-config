@@ -23,7 +23,10 @@ set -x PATH "$HOME/.npm-packages/bin" $PATH
 set -x PATH "./node_modules/.bin" $PATH
 
 # python
-set -x PATH "/usr/local/share/python" $PATH
+# Config `pip' to bail outside a virtualenv by default, see function gpip
+set -x PIP_REQUIRE_VIRTUALENV 1
+# Disable `virtualenv' activate script to override prompt
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # go
 set -x GOPATH "$HOME/.go-lib"
