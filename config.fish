@@ -11,3 +11,5 @@ set -g VIRTUALFISH_COMPAT_ALIASES
 
 # nvm support in fish
 . "$HOME/.config/fish/plugins/nvm-wrapper/nvm.fish"
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
