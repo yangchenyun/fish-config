@@ -43,6 +43,10 @@ function md
   mkdir -p "$argv"; cd "$argv"
 end
 
+function imsg --description "send imessage to my wife"
+  osascript -e "tell application \"Messages\" to send \"$argv\" to buddy \"Yun Wu\""
+end
+
 function randpw --description "generate a random password"
   dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 | rev | cut -b 2- | rev
 end

@@ -8,3 +8,5 @@ set -g VIRTUALFISH_COMPAT_ALIASES
 . "$HOME/.config/fish/plugins/virtualfish/virtual.fish"
 . "$HOME/.config/fish/plugins/virtualfish/auto_activation.fish"
 . "$HOME/.config/fish/plugins/virtualfish/global_requirements.fish"
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
