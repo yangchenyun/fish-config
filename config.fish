@@ -9,4 +9,15 @@ set -g VIRTUALFISH_COMPAT_ALIASES
 . "$HOME/.config/fish/plugins/virtualfish/auto_activation.fish"
 . "$HOME/.config/fish/plugins/virtualfish/global_requirements.fish"
 
+# fenv
+set fish_function_path $fish_function_path "$HOME/.config/fish/plugins/plugin-foreign-env/functions"
+
+# Nix
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fenv source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+end
+
+# Shell Integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+posix-source "$HOME/.fetchenv"

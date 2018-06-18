@@ -53,10 +53,10 @@ end
 
 function cd --description "auto ls for each cd"
   if [ -n $argv[1] ]
-    builtin cd $argv[1] 
+    builtin cd $argv[1]
     and ls -AF
   else
-    builtin cd ~ 
+    builtin cd ~
     and ls -AF
   end
 end
@@ -71,6 +71,10 @@ end
 
 function pgrep --description "pgrep a process interactively"
   ps aux | peco | awk '{ print $2 }'
+end
+
+function rename --description "Rename a symbol recursively in a folder"
+    rg -l "$argv[1]" | xargs -I\{\} perl -i -pe "s/$argv[1]/$argv[2]/g" \{\}
 end
 
 ################################
@@ -105,3 +109,10 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true and 
 alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
+
+function posix-source
+	for i in (cat $argv)
+		set arr (echo $i |tr = \n)
+  		set -gx $arr[1] $arr[2]
+	end
+end

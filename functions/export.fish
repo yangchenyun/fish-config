@@ -18,8 +18,6 @@ set -x  RUBY_GC_HEAP_GROWTH_FACTOR 1.25
 set -x  RUBY_GC_HEAP_GROWTH_MAX_SLOTS 300000
 
 # nodejs
-set -x NODE_PATH "$HOME/.npm-packages/lib/node_modules" $NODE_PATH
-set -x PATH "$HOME/.npm-packages/bin" $PATH
 set -x PATH "./node_modules/.bin" $PATH
 
 # python
@@ -29,12 +27,15 @@ set -x PIP_REQUIRE_VIRTUALENV 1
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # go
-set -x GOPATH "$HOME/.go-lib"
+set -x GOPATH "$HOME/go"
 set -x PATH "$GOPATH/bin" $PATH
 set -x PATH "/usr/local/opt/go/libexec/bin" $PATH
 
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
+
+# flutter
+set -x PATH "$HOME/project/flutter/bin" $PATH
 
 # respect local bins
 set -x PATH "./bin" $PATH
@@ -52,13 +53,13 @@ set -x LESS "-RSM~gIsw"
 
 # Colorful man pages
 # from http://pastie.org/pastes/206041/text
-setenv -x LESS_TERMCAP_mb (set_color -o red)
-setenv -x LESS_TERMCAP_md (set_color -o red)
-setenv -x LESS_TERMCAP_me (set_color normal)
-setenv -x LESS_TERMCAP_se (set_color normal)
-setenv -x LESS_TERMCAP_so (set_color -b blue -o yellow)
-setenv -x LESS_TERMCAP_ue (set_color normal)
-setenv -x LESS_TERMCAP_us (set_color -o green)
+set -gx LESS_TERMCAP_mb (set_color -o red)
+set -gx LESS_TERMCAP_md (set_color -o red)
+set -gx LESS_TERMCAP_me (set_color normal)
+set -gx LESS_TERMCAP_se (set_color normal)
+set -gx LESS_TERMCAP_so (set_color -b blue -o yellow)
+set -gx LESS_TERMCAP_ue (set_color normal)
+set -gx LESS_TERMCAP_us (set_color -o green)
 
 # grep colors
-setenv -x GREP_OPTIONS "--color=auto"
+set -gx GREP_OPTIONS "--color=auto"
