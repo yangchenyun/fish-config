@@ -34,9 +34,6 @@ set -x PATH "/usr/local/opt/go/libexec/bin" $PATH
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
 
-# flutter
-set -x PATH "$HOME/project/flutter/bin" $PATH
-
 # respect local bins
 set -x PATH "./bin" $PATH
 
@@ -60,6 +57,3 @@ set -gx LESS_TERMCAP_se (set_color normal)
 set -gx LESS_TERMCAP_so (set_color -b blue -o yellow)
 set -gx LESS_TERMCAP_ue (set_color normal)
 set -gx LESS_TERMCAP_us (set_color -o green)
-
-# grep colors
-set -gx GREP_OPTIONS "--color=auto"
