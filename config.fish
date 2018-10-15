@@ -9,6 +9,9 @@ set -g VIRTUALFISH_COMPAT_ALIASES
 . "$HOME/.config/fish/plugins/virtualfish/auto_activation.fish"
 . "$HOME/.config/fish/plugins/virtualfish/global_requirements.fish"
 
+# nvm-wrapper
+. "$HOME/.config/fish/plugins/nvm-wrapper/nvm.fish"
+
 # fenv
 set fish_function_path $fish_function_path "$HOME/.config/fish/plugins/plugin-foreign-env/functions"
 
