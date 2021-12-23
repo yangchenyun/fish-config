@@ -62,8 +62,19 @@ function cd --description "auto ls for each cd"
     end
 end
 
+function rename --description "Rename a symbol recursively in a folder"
+    rg -l "$argv[1]" | xargs -I\{\} perl -i -pe "s/$argv[1]/$argv[2]/g" \{\}
+end
+
+################################
+###  Interactive Operations with `peco`
+################################
 function ghd --description "cd into remote github repository interactively"
     builtin cd (ghq list --full-path | peco)
+end
+
+function h --description "search history interactively"
+    history | peco
 end
 
 function pkill --description "pkill a process interactively"
@@ -76,10 +87,6 @@ end
 
 function pgrep --description "pgrep a process interactively"
     ps aux | peco | awk '{ print $2 }'
-end
-
-function rename --description "Rename a symbol recursively in a folder"
-    rg -l "$argv[1]" | xargs -I\{\} perl -i -pe "s/$argv[1]/$argv[2]/g" \{\}
 end
 
 ################################
