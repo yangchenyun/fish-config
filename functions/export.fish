@@ -18,7 +18,9 @@ set -x  RUBY_GC_HEAP_GROWTH_FACTOR 1.25
 set -x  RUBY_GC_HEAP_GROWTH_MAX_SLOTS 300000
 
 # nodejs
+set -x PATH $HOME/.npm-packages/bin $PATH
 set -x PATH "./node_modules/.bin" $PATH
+set -x nvm_default_version 'lts/dubnium'
 
 # python
 # Config `pip' to bail outside a virtualenv by default, see function gpip
@@ -26,10 +28,20 @@ set -x PIP_REQUIRE_VIRTUALENV 1
 # Disable `virtualenv' activate script to override prompt
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
+# pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+status --is-interactive; and pyenv init --path | source
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
+
 # go
 set -x GOPATH "$HOME/go"
-set -x PATH "$GOPATH/bin" $PATH
-set -x PATH "/usr/local/opt/go/libexec/bin" $PATH
+set -x PATH "$HOME/go/bin" $PATH
+set -x PATH "$HOME/.go/current/bin" $PATH
+
+# rust
+set -x PATH "$HOME/.cargo/bin" $PATH
 
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
@@ -39,10 +51,6 @@ set -x PATH "./bin" $PATH
 
 # editor
 set -x EDITOR "mvim"
-
-# android SDK
-set -x ANDROID_SDK_ROOT /usr/local/Cellar/android-sdk/22.3
-set -x ANDROID_HOME /usr/local/Cellar/android-sdk/22.3
 
 # LESS with colors
 # from http://blog.0x1fff.com/2009/11/linux-tip-color-enabled-pager-less.html
