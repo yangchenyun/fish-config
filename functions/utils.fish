@@ -62,6 +62,10 @@ function cd --description "auto ls for each cd"
     end
 end
 
+function ghd --description "cd into remote github repository interactively"
+    builtin cd (ghq list --full-path | peco)
+end
+
 function pkill --description "pkill a process interactively"
     ps aux | peco | awk '{ print $2 }' | xargs kill
 end
