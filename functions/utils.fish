@@ -73,6 +73,15 @@ function ghd --description "cd into remote github repository interactively"
     builtin cd (ghq list --full-path | peco)
 end
 
+function gho --description "open remote github repository interactively"
+    open https://(ghq list | peco)
+end
+
+function lstcp --description "list listening TCP ports"
+    sudo lsof -nP -iTCP -sTCP:LISTEN | peco
+end
+
+
 function h --description "search history interactively"
     history | peco
 end
