@@ -55,6 +55,8 @@ alias egrep='egrep --color=auto'
 alias psef="ps -ef | peco "
 alias top="top -o cpu"
 
+alias k="kubectl"
+
 # Shortcut to Google Chrome
 # alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
