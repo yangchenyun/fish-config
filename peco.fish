@@ -1,17 +1,9 @@
-function ghd --description "cd into remote github repository interactively"
-    builtin cd (ghq list --full-path | peco)
-end
-
 function gho --description "open remote github repository interactively"
     open https://(ghq list | peco)
 end
 
 function lstcp --description "list listening TCP ports"
     sudo lsof -nP -iTCP -sTCP:LISTEN | peco
-end
-
-function h --description "search history interactively"
-    history | peco
 end
 
 function pkill --description "pkill a process interactively"
@@ -26,7 +18,7 @@ function pgrep --description "pgrep a process interactively"
     ps aux | peco | awk '{ print $2 }'
 end
 
-function _peco_change_repo
+function _peco_change_directory
     if [ (count $argv) ]
         peco --layout=bottom-up --query "$argv " | perl -pe 's/([ ()])/\\\\$1/g' | read foo
     else
@@ -50,18 +42,4 @@ function peco_change_repo --description "Change working repository"
     end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
 
-function peco_select_history --description "Search histories"
-    if test (count $argv) = 0
-        set peco_flags --layout=bottom-up
-    else
-        set peco_flags --layout=bottom-up --query "$argv"
-    end
-
-    history | peco $peco_flags | read foo
-
-    if [ $foo ]
-        commandline $foo
-    else
-        commandline ''
-    end
-end
+bind \cf peco_change_repo

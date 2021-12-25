@@ -38,8 +38,3 @@ set -x PATH "$HOME/.cabal/bin" $PATH
 
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/peco.fish"
-
-function fish_user_key_bindings
-    bind \cf peco_change_repo
-    bind \cr peco_select_history
-end
