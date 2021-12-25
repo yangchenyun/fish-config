@@ -13,6 +13,9 @@ if type -q exa
     alias lt='exa --long --all --group --header --tree --level'
 end
 
+if type -q bat
+    alias cat 'bat --paging=never'
+end
 
 # editor
 alias v "mvim -v"
