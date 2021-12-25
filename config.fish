@@ -40,6 +40,6 @@ source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/peco.fish"
 
 function fish_user_key_bindings
-    # peco
-    bind \cf peco_change_directory # Bind for peco change directory to Ctrl+F
+    bind \cf peco_change_repo
+    bind \cr peco_select_history
 end

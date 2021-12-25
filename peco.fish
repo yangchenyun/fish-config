@@ -49,3 +49,19 @@ function peco_change_repo --description "Change working repository"
         ls -ad $HOME/project/*/* | grep -v \.git
     end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
+
+function peco_select_history --description "Search histories"
+    if test (count $argv) = 0
+        set peco_flags --layout=bottom-up
+    else
+        set peco_flags --layout=bottom-up --query "$argv"
+    end
+
+    history | peco $peco_flags | read foo
+
+    if [ $foo ]
+        commandline $foo
+    else
+        commandline ''
+    end
+end
