@@ -36,5 +36,15 @@ set -x PATH "$HOME/.cargo/bin" $PATH
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
 
+# OS specific setting
+switch (uname)
+    case Darwin
+        source (dirname (status --current-filename))/config-osx.fish
+    case Linux
+        source (dirname (status --current-filename))/config-linux.fish
+    case '*'
+        source (dirname (status --current-filename))/config-windows.fish
+end
+
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/peco.fish"
