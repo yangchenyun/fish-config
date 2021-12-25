@@ -33,5 +33,10 @@ set -x PATH "$HOME/.cargo/bin" $PATH
 # haskell
 set -x PATH "$HOME/.cabal/bin" $PATH
 
-
 source "$HOME/.config/fish/aliases.fish"
+source "$HOME/.config/fish/peco.fish"
+
+function fish_user_key_bindings
+    # peco
+    bind \cf peco_change_directory # Bind for peco change directory to Ctrl+F
+end
