@@ -14,6 +14,9 @@ set -x LESS "-RSM~gIsw"
 # python
 set -x PIP_REQUIRE_VIRTUALENV 0
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+function gpip
+    env PIP_REQUIRE_VIRTUALENV='' pip $argv
+end
 
 # pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
