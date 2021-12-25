@@ -48,7 +48,9 @@ end
 
 # 3rd party shell tools
 direnv hook fish | source
+source /usr/local/opt/asdf/libexec/asdf.fish
 
+# user configs
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
