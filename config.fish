@@ -46,6 +46,9 @@ switch (uname)
         source (dirname (status --current-filename))/config-windows.fish
 end
 
+# 3rd party shell tools
+direnv hook fish | source
+
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
