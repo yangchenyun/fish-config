@@ -3,9 +3,16 @@ alias .. "cd .."
 alias ... "cd ../.."
 
 alias la "ls -Gla"
-alias lsd 'ls -l | grep "^d"'
+alias ld 'ls -l | grep "^d"'
 alias ll 'ls -ahlF'
-alias l 'ls -CF'
+if type -q exa
+    alias l exa
+    alias la 'exa --long --all --group --header --binary --links --inode --blocks'
+    alias ld 'exa --long --all --group --header --list-dirs'
+    alias ll 'exa --long --all --group --header --git'
+    alias lt='exa --long --all --group --header --tree --level'
+end
+
 
 # editor
 alias v "mvim -v"
