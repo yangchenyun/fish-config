@@ -47,4 +47,5 @@ switch (uname)
 end
 
 source "$HOME/.config/fish/aliases.fish"
+source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
