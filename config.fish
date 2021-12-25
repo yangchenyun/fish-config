@@ -48,6 +48,7 @@ end
 
 # 3rd party shell tools
 direnv hook fish | source
+navi widget fish | source
 source /usr/local/opt/asdf/libexec/asdf.fish
 
 # user configs

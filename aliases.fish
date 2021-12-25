@@ -17,6 +17,10 @@ if type -q bat
     alias cat 'bat --paging=never'
 end
 
+if type -q navi
+    alias n=navi-widget
+end
+
 # editor
 alias v "mvim -v"
 alias vim "mvim -v"
