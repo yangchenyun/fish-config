@@ -28,9 +28,9 @@ if test $TERM = xterm-kitty
 end
 
 # editor
-alias v "mvim -v"
-alias vim "mvim -v"
-alias e "emacsclient -t"
+alias v "nvim -v"
+alias vim "nvim -v"
+alias e emacsclient
 alias ec "emacsclient -c"
 
 # git
