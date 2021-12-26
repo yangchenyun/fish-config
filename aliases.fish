@@ -21,6 +21,12 @@ if type -q navi
     alias n=navi-widget
 end
 
+# kitty
+if test $TERM = xterm-kitty
+    alias icat="kitty +kitten icat"
+    alias diff="kitty +kitten diff"
+end
+
 # editor
 alias v "mvim -v"
 alias vim "mvim -v"
