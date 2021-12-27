@@ -50,11 +50,10 @@ complete --command venv --exclusive --condition __fish_use_subcommand --argument
 complete --command venv --exclusive --condition __fish_use_subcommand --arguments activate --description "Select and activate venv"
 complete --command venv --exclusive --condition __fish_use_subcommand --arguments deactivate --description "if any, deactivate current venv"
 
-# FIXME: weird file description bug when activated
-# function __auto_venv --on-variable PWD --description "Automatically activate python venv"
-#     set -l venv_name (basename $PWD | tr . -)
+function __auto_venv --on-variable PWD --description "Automatically activate python venv if match base folder name"
+    set -l venv_name (basename $PWD | tr . -)
 
-#     if test -d $HOME/.virtualenvs/$venv_name
-#         source $HOME/.virtualenvs/$venv_name/bin/activate.fish
-#     end
-# end
+    if test -d $HOME/.virtualenvs/$venv_name
+        source $HOME/.virtualenvs/$venv_name/bin/activate.fish
+    end
+end
