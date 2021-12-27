@@ -22,7 +22,7 @@ if type -q navi
 end
 
 # NOTE: https://github.com/asdf-community/asdf-direnv
-if type -q asdf -a asdf exec direnv 1>2 2>/dev/null
+if type -q asdf -a asdf exec direnv 1>&2 2>/dev/null
     test $status -eq 0
     alias direnv "asdf exec direnv"
 end
