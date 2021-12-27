@@ -24,6 +24,7 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 status --is-interactive; and pyenv init --path | source
 status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
+source "$HOME/.config/fish/pyenv.fish"
 
 # go
 set -x GOPATH "$HOME/go"
