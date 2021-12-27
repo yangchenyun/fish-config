@@ -2,19 +2,19 @@ function gho --description "open remote github repository interactively"
     open https://(ghq list | peco)
 end
 
-function lstcp --description "list listening TCP ports"
+function ltcp --description "list listening TCP ports"
     sudo lsof -nP -iTCP -sTCP:LISTEN | peco
 end
 
-function pkill --description "pkill a process interactively"
+function pk --description "pkill a process interactively"
     ps aux | peco | awk '{ print $2 }' | xargs kill
 end
 
-function ppkill --description "kill -9 a process interactively"
+function ppk --description "kill -9 a process interactively"
     ps aux | peco | awk '{ print $2 }' | xargs kill -KILL
 end
 
-function pgrep --description "pgrep a process interactively"
+function pp --description "grep a process interactively"
     ps aux | peco | awk '{ print $2 }'
 end
 
