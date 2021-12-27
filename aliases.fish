@@ -22,7 +22,7 @@ if type -q navi
 end
 
 # kitty
-if test $TERM = xterm-kitty
+if test "$TERM" = xterm-kitty
     alias icat="kitty +kitten icat"
     alias diff="kitty +kitten diff"
 end
