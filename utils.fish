@@ -12,7 +12,7 @@ alias httpdump "sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 
 function server --description "Start an HTTP server from a directory"
     open http://localhost:8080/
-    and python -m SimpleHTTPServer 8080
+    and python2 -m SimpleHTTPServer 8080
 end
 
 function digga --description "All the dig info"
