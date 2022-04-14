@@ -1,5 +1,5 @@
 function gho --description "open remote github repository interactively"
-    open https://(ghq list | peco)
+    open https://(ghq list | peco --layout=bottom-up)
 end
 
 function ltcp --description "list listening TCP ports"
@@ -36,7 +36,7 @@ end
 function peco_change_repo --description "Change working repository"
     begin
         ghq list -p
-        ls -ad */ | perl -pe "s#^#$PWD/#" | grep -v \.git
+        ls -ad * | perl -pe "s#^#$PWD/#" | grep -v \.git
         ls -ad $HOME/project/* | grep -v \.git
     end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
