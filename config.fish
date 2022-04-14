@@ -25,6 +25,8 @@ status --is-interactive; and pyenv init --path | source
 status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 
+set -x PATH "$HOME/.gitbin" $PATH
+
 # go
 set -x GOPATH "$HOME/go"
 set -x PATH "$HOME/go/bin" $PATH
@@ -47,7 +49,7 @@ switch (uname)
 end
 
 # 3rd party shell tools
-direnv hook fish | source
+# direnv hook fish | source
 navi widget fish | source
 source /usr/local/opt/asdf/libexec/asdf.fish
 
@@ -56,3 +58,8 @@ source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
 source "$HOME/.config/fish/pyenv.fish"
+
+# Created by `pipx` on 2022-01-17 13:21:07
+set PATH $PATH /Users/steven/.local/bin
+
+export PATH="$PATH:/Users/steven/.foundry/bin"
