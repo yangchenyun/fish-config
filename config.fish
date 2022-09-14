@@ -19,11 +19,13 @@ function gpip
 end
 
 # pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-status --is-interactive; and pyenv init --path | source
-status --is-interactive; and pyenv init - | source
-status --is-interactive; and pyenv virtualenv-init - | source
+if type -q pyenv
+    set -Ux PYENV_ROOT $HOME/.pyenv
+    set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+    status --is-interactive; and pyenv init --path | source
+    status --is-interactive; and pyenv init - | source
+    status --is-interactive; and pyenv virtualenv-init - | source
+end
 
 set -x PATH "$HOME/.gitbin" $PATH
 
