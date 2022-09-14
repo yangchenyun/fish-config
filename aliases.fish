@@ -17,10 +17,6 @@ if type -q bat
     alias cat 'bat --paging=never'
 end
 
-if type -q navi
-    alias n=navi-widget
-end
-
 # NOTE: https://github.com/asdf-community/asdf-direnv
 if type -q asdf -a asdf exec direnv 1>&2 2>/dev/null
     test $status -eq 0
