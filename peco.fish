@@ -37,7 +37,7 @@ function peco_change_repo --description "Change working repository"
     begin
         ghq list -p
         ls -ad * | perl -pe "s#^#$PWD/#" | grep -v \.git
-        ls -ad $HOME/project/* | grep -v \.git
+        ls -ad $HOME/projects/* | grep -v \.git
     end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
 
