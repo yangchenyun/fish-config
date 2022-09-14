@@ -51,7 +51,10 @@ end
 # 3rd party shell tools
 # direnv hook fish | source
 navi widget fish | source
-source /usr/local/opt/asdf/libexec/asdf.fish
+
+if type -q asdf
+    source /usr/local/opt/asdf/libexec/asdf.fish
+end
 
 # user configs
 source "$HOME/.config/fish/aliases.fish"
@@ -60,6 +63,12 @@ source "$HOME/.config/fish/peco.fish"
 source "$HOME/.config/fish/pyenv.fish"
 
 # Created by `pipx` on 2022-01-17 13:21:07
-set PATH $PATH /Users/steven/.local/bin
+set -x PATH $PATH $HOME/.local/bin
 
-export PATH="$PATH:/Users/steven/.foundry/bin"
+set -x PATH $PATH $HOME/.foundry/bin
+
+
+# Android related
+if type -q adb
+    set -x ANDROID_ADB (which adb)
+end
