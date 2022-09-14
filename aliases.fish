@@ -30,8 +30,9 @@ if test "$TERM" = xterm-kitty
 end
 
 # editor
-alias v "nvim -v"
-alias vim "nvim -v"
+alias v nvim
+alias vi nvim
+alias vim nvim
 alias e emacsclient
 alias ec "emacsclient -c"
 
