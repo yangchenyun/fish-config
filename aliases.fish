@@ -27,6 +27,7 @@ end
 if test "$TERM" = xterm-kitty
     alias icat="kitty +kitten icat"
     alias diff="kitty +kitten diff"
+    alias ssh="kitty +kitten ssh"
 end
 
 # editor
