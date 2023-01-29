@@ -1,0 +1,14 @@
+source_google_fish_package crow
+source_google_fish_package acid
+source_google_fish_package benchy
+source_google_fish_package buildfix
+source_google_fish_package citc_prompt
+source_google_fish_package crow
+source_google_fish_package fst
+source_google_fish_package graphviz
+source_google_fish_package hb
+source_google_fish_package hi
+source_google_fish_package pastebin
+source_google_fish_package perfgate
+source_google_fish_package spool
+source_google_fish_package sut

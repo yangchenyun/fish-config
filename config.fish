@@ -50,6 +50,10 @@ switch (uname)
         source (dirname (status --current-filename))/config-windows.fish
 end
 
+if string match '*.googlers.com' (hostname)
+    source (dirname (status --current-filename))/config-google.fish
+end
+
 # 3rd party shell tools
 # direnv hook fish | source
 navi widget fish | source
@@ -73,4 +77,5 @@ set -x PATH $PATH $HOME/.foundry/bin
 # Android related
 if type -q adb
     set -x ANDROID_ADB (which adb)
+    set -x ANDROID_SDK_ROOT "$HOME/Library/Android/sdk"
 end
