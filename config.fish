@@ -10,12 +10,19 @@ set -x PATH "$PWD/bin" $PATH
 # from http://blog.0x1fff.com/2009/11/linux-tip-color-enabled-pager-less.html
 set -x LESS "-RSM~gIsw"
 
+set -x EDITOR vi
+
 # Language Env
 # python
 set -x PIP_REQUIRE_VIRTUALENV 0
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 function gpip
     env PIP_REQUIRE_VIRTUALENV='' pip $argv
+end
+# Created by `pipx` on 2022-01-17 13:21:07
+set -x PATH $PATH $HOME/.local/bin
+if type -q poetry
+        poetry completions fish > ~/.config/fish/completions/poetry.fish
 end
 
 # pyenv
@@ -55,7 +62,7 @@ if string match '*.googlers.com' (hostname)
 end
 
 # 3rd party shell tools
-# direnv hook fish | source
+direnv hook fish | source
 navi widget fish | source
 
 if type -q asdf
@@ -67,15 +74,24 @@ source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
 source "$HOME/.config/fish/pyenv.fish"
-
-# Created by `pipx` on 2022-01-17 13:21:07
-set -x PATH $PATH $HOME/.local/bin
+source "$HOME/.config/fish/secret.fish"
 
 set -x PATH $PATH $HOME/.foundry/bin
 
+# UnitX Work-related
+set -x UNITX_PROJECT_PATH $HOME/unitx_repos
 
 # Android related
 if type -q adb
     set -x ANDROID_ADB (which adb)
     set -x ANDROID_SDK_ROOT "$HOME/Library/Android/sdk"
 end
+
+set --universal nvm_default_version lts/hydrogen
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/steveyang/miniconda3/bin/conda
+    eval /Users/steveyang/miniconda3/bin/conda "shell.fish" hook $argv | source
+end
+# <<< conda initialize <<<
