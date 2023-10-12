@@ -62,19 +62,18 @@ if string match '*.googlers.com' (hostname)
 end
 
 # 3rd party shell tools
-direnv hook fish | source
+# direnv hook fish | source
 navi widget fish | source
-
-if type -q asdf
-    source /usr/local/opt/asdf/libexec/asdf.fish
-end
 
 # user configs
 source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/utils.fish"
 source "$HOME/.config/fish/peco.fish"
 source "$HOME/.config/fish/pyenv.fish"
-source "$HOME/.config/fish/secret.fish"
+
+if test -f "$HOME/.config/fish/secret.fish"
+    source "$HOME/.config/fish/secret.fish"
+end
 
 set -x PATH $PATH $HOME/.foundry/bin
 
