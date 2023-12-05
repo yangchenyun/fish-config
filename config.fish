@@ -75,7 +75,12 @@ if test -f "$HOME/.config/fish/secret.fish"
     source "$HOME/.config/fish/secret.fish"
 end
 
-set -x PATH $PATH $HOME/.foundry/bin
+# Foundry
+fish_add_path -m "$HOME/.foundry/bin"
+
+# Modular
+fish_add_path -m "$HOME/.modular/pkg/packages.modular.com_mojo/bin"
+set -x MODULAR_HOME "$HOME/.modular"
 
 # UnitX Work-related
 set -x UNITX_PROJECT_PATH $HOME/unitx_repos
